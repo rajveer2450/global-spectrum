@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Global Spectrum | Mining, mineral haulage and property</title>
+<meta name="description" content="Global Spectrum mines minerals, hauls them by road and rail, and buys, sells and leases land and property across [your region].">
+<meta name="theme-color" content="#e4e2dd">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Global Spectrum | Mining, mineral haulage and property">
+<meta property="og:description" content="Minerals mined and moved by road and rail. Land and property bought, sold and leased.">
+<meta property="og:image" content="assets/img/mine-benches-1280.webp">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/libre-franklin-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/avif" fetchpriority="high" media="(max-width: 700px)" href="assets/img/mine-benches-sq-900.avif">
+<link rel="preload" as="image" type="image/avif" fetchpriority="high" media="(min-width: 701px)"
+  imagesrcset="assets/img/mine-benches-800.avif 800w, assets/img/mine-benches-1280.avif 1280w, assets/img/mine-benches-1920.avif 1920w"
+  imagesizes="100vw">
+<style>
+@font-face{font-family:"Libre Franklin";font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/libre-franklin-latin.woff2) format("woff2")}
+
+/* Colours are taken from the ground itself: limestone, hematite (iron ore),
+   machinery yellow, scrub around the pits, and coal. One field per chapter. */
+:root{
+  --limestone:#e4e2dd;--limestone-2:#d6d3cb;
+  --hematite:#7a3b2e;--hematite-2:#69311f;
+  --machine:#f0b323;--machine-2:#dfa312;
+  --scrub:#2f3d29;--scrub-2:#3c4c35;
+  --coal:#1e1d1b;--coal-2:#2e2d2a;
+  --font:"Libre Franklin","Franklin Gothic Medium","Helvetica Neue",Arial,sans-serif;
+  --m:clamp(1rem,3.6vw,3.5rem);
+  --g:clamp(1rem,2.2vw,2.25rem);
+  --s-small:.875rem;
+  --s-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --s-lead:clamp(1.25rem,1.05rem + .8vw,1.75rem);
+  --s-mid:clamp(1.625rem,1.1rem + 2.1vw,3rem);
+  --s-display:clamp(2.75rem,.6rem + 8.4vw,10rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+[data-field=limestone]{--bg:var(--limestone);--fg:var(--coal);--sub:#4d4a44;--surface:var(--limestone-2);--btn:var(--coal);--btn-fg:var(--limestone);color-scheme:light}
+[data-field=hematite]{--bg:var(--hematite);--fg:#f3ebe5;--sub:#e4d0c7;--surface:var(--hematite-2);--btn:var(--limestone);--btn-fg:var(--hematite);color-scheme:dark}
+[data-field=machine]{--bg:var(--machine);--fg:var(--coal);--sub:#3f320f;--surface:var(--machine-2);--btn:var(--coal);--btn-fg:var(--machine);color-scheme:light}
+[data-field=scrub]{--bg:var(--scrub);--fg:#ece9df;--sub:#c9cdbd;--surface:var(--scrub-2);--btn:var(--limestone);--btn-fg:var(--scrub);color-scheme:dark}
+[data-field=coal]{--bg:var(--coal);--fg:#ece8e0;--sub:#b5b0a6;--surface:var(--coal-2);--btn:var(--machine);--btn-fg:var(--coal);color-scheme:dark}
+[data-field]{background:var(--bg);color:var(--fg)}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:4.5rem;scrollbar-color:var(--hematite) var(--limestone)}
+body{margin:0;font-family:var(--font);font-size:var(--s-body);line-height:1.55;background:var(--limestone);color:var(--coal);font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,p,ul,dl,dd,figure{margin:0}
+ul{padding:0;list-style:none}
+a{color:inherit;text-decoration-thickness:.07em;text-underline-offset:.2em}
+a:hover{text-decoration-thickness:.14em}
+:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+::selection{background:var(--machine);color:var(--coal)}
+[data-field=machine] ::selection{background:var(--coal);color:var(--machine)}
+.skip{position:absolute;left:var(--m);top:-4rem;z-index:20;background:var(--coal);color:var(--limestone);padding:.6rem 1rem}
+.skip:focus{top:.5rem}
+
+/* Type: one family, five sizes */
+.display{font-size:var(--s-display);font-weight:600;line-height:.92;letter-spacing:-.045em;text-wrap:balance;margin-left:-.05em}
+h3{font-size:var(--s-lead);font-weight:600;line-height:1.2;letter-spacing:-.01em}
+.lead{font-size:var(--s-lead);line-height:1.35;max-width:34ch;text-wrap:pretty}
+p{max-width:62ch;text-wrap:pretty}
+.sub{color:var(--sub)}
+.small{font-size:var(--s-small);line-height:1.45}
+.num{font-variant-numeric:tabular-nums}
+
+/* Frame */
+.wrap{padding-inline:var(--m)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g)}
+.chapter{padding-block:clamp(5rem,11vw,11rem)}
+figure img{width:100%}
+figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(--sub)}
+
+/* Buttons and links */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:.75rem 1.5rem;background:var(--btn);color:var(--btn-fg);font:inherit;font-weight:600;line-height:1.2;text-decoration:none;border:0;border-radius:0;cursor:pointer;transition:transform .25s var(--ease),filter .25s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible{outline-color:var(--fg)}
+.textlink{font-weight:600}
+
+/* Header: takes the colour of the chapter underneath it */
+.bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:var(--g);min-height:4rem;padding:.6rem var(--m);transition:background-color .5s ease,color .5s ease}
+.mark{margin-right:auto;font-size:1.25rem;font-weight:650;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
+.bar nav ul{display:flex;flex-wrap:wrap;gap:.25rem clamp(1rem,2vw,2rem)}
+.bar nav a{font-weight:500;text-decoration:none}
+.bar nav a:hover{text-decoration:underline}
+.bar .btn{min-height:2.5rem;padding:.5rem 1.1rem}
+.menu-toggle{display:none}
+
+/* Hero: the surface above, the pit below */
+.hero-text{padding-block:clamp(2.75rem,6vw,5.5rem) clamp(2rem,4vw,3.5rem);row-gap:clamp(1.5rem,3vw,2.5rem)}
+.hero h1{grid-column:1/-1}
+.hero .lead{grid-column:1/7}
+.hero .actions{grid-column:8/-1;align-self:end;justify-self:end;display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.75rem}
+.hero-pic{position:relative;height:clamp(260px,56svh,760px);overflow:hidden;background:var(--hematite)}
+.hero-pic img{height:100%;object-fit:cover;object-position:50% 30%}
+.hero-pic::after{content:"";position:absolute;inset:auto 0 0;height:35%;background:linear-gradient(rgb(0 0 0/0),rgb(0 0 0/.5));pointer-events:none}
+.hero-pic figcaption{position:absolute;z-index:1;left:var(--m);bottom:1rem;margin:0;color:#f3ebe5}
+
+/* Mining */
+.mining h2{grid-column:1/8}
+.mining .lead{grid-column:1/7;margin-top:clamp(1.5rem,3vw,2.5rem)}
+.mining .body{grid-column:1/7;margin-top:1.25rem}
+.mining .pic{grid-column:8/-1;grid-row:1/5;margin-right:calc(-1*var(--m))}
+.minerals{grid-column:1/-1;margin-top:clamp(4rem,9vw,8rem)}
+.minerals li{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);align-items:baseline;padding-block:clamp(.9rem,1.6vw,1.4rem)}
+.minerals li:nth-child(even){background:var(--surface);margin-inline:calc(-1*var(--m));padding-inline:var(--m)}
+.minerals strong{grid-column:1/7;font-size:var(--s-mid);font-weight:600;line-height:1.05;letter-spacing:-.025em}
+.minerals li span{grid-column:7/-1;color:var(--sub)}
+.minerals .small{margin-top:1.5rem}
+
+/* Haulage */
+.haul h2{grid-column:1/-1}
+.haul .lead{grid-column:1/6;margin-top:clamp(1.5rem,3vw,2.5rem)}
+.haul dl{grid-column:1/6;margin-top:clamp(2rem,4vw,3rem);display:grid;gap:1.5rem}
+.haul dt{font-size:var(--s-lead);font-weight:600;line-height:1.2}
+.haul dd{margin-top:.35rem}
+.estimator{grid-column:7/-1;grid-row:2/4;align-self:start;margin-top:clamp(1.5rem,3vw,2.5rem);padding:clamp(1.25rem,2.6vw,2.5rem);background:var(--surface)}
+.estimator h3{margin-bottom:1.25rem}
+.estimator input,.estimator select{background:var(--limestone)}
+.result{margin-block:1.5rem .5rem}
+.result strong{display:block;font-size:var(--s-mid);font-weight:600;line-height:1.05;letter-spacing:-.025em}
+.haul-pics{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--g);margin-top:clamp(4rem,9vw,8rem)}
+.haul-pics .p1{grid-column:1/8;grid-row:1/3;display:grid;grid-template-rows:minmax(0,1fr) auto}
+.haul-pics .p1 picture{display:block;min-height:0}
+.haul-pics .p1 img{height:100%;object-fit:cover}
+.haul-pics .p2,.haul-pics .p3{grid-column:8/-1}
+
+/* Property */
+.property{padding-top:0}
+.property .bleed{height:clamp(300px,68svh,820px);overflow:hidden;margin-bottom:clamp(4rem,9vw,8rem)}
+.property .bleed img{height:100%;object-fit:cover;object-position:50% 60%}
+.property .bleed figcaption{padding-inline:var(--m)}
+.property h2{grid-column:1/7}
+.property .lead{grid-column:1/6;margin-top:clamp(1.5rem,3vw,2.5rem)}
+.property .side{grid-column:1/6;margin-top:clamp(2rem,4vw,3rem)}
+.services{grid-column:7/-1;grid-row:1/4;align-self:start}
+.services ul{display:grid;gap:clamp(1.25rem,2.4vw,2rem)}
+.services .lead{margin-top:clamp(2.5rem,5vw,4rem)}
+.services .lead+p{margin-top:1rem}
+.services strong{display:block;font-size:var(--s-lead);font-weight:600;line-height:1.2;margin-bottom:.3rem}
+.services li span{color:var(--sub)}
+
+/* Founder */
+.portrait{grid-column:1/6;align-self:start;position:sticky;top:5.5rem}
+.founder-text{grid-column:7/-1;align-self:end}
+.founder-text .role{margin-top:1rem}
+.founder-text .note{margin-top:clamp(1.75rem,3.5vw,2.75rem)}
+.founder-text .note p+p{margin-top:1em}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem var(--g);margin-top:clamp(2rem,4vw,3rem);padding:clamp(1.25rem,2.4vw,2rem);background:var(--surface)}
+.facts dt{color:var(--sub);font-size:var(--s-small)}
+.facts dd{font-weight:600}
+
+/* Contact */
+.contact h2{grid-column:1/-1}
+.direct{grid-column:1/6;margin-top:clamp(2rem,4vw,3rem);display:grid;gap:1.4rem;align-content:start}
+.direct .phone{font-size:var(--s-mid);font-weight:600;letter-spacing:-.025em;line-height:1.05;text-decoration:none}
+.direct .phone:hover{text-decoration:underline}
+.lines{display:grid;gap:1.1rem}
+.direct dt{color:var(--sub);font-size:var(--s-small)}
+.direct dd{margin-top:.15rem}
+.enquiry{grid-column:7/-1;margin-top:clamp(2rem,4vw,3rem)}
+.enquiry h3{margin-bottom:1.25rem}
+.records{grid-column:1/-1;margin-top:clamp(4rem,9vw,8rem)}
+.records dl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem var(--g);margin-top:1.25rem}
+.records dt{color:var(--sub);font-size:var(--s-small)}
+.records dd{font-weight:600;overflow-wrap:anywhere}
+
+/* Forms */
+.form{display:grid;gap:1.1rem}
+.form label{display:grid;gap:.4rem;font-weight:500}
+.form input,.form select,.form textarea{width:100%;min-height:3rem;padding:.75rem .9rem;font:inherit;color:var(--fg);background:var(--surface);border:0;border-radius:0;accent-color:var(--fg)}
+.form textarea{min-height:8rem;resize:vertical}
+.form ::placeholder{color:var(--sub);opacity:1}
+.form input:focus-visible,.form select:focus-visible,.form textarea:focus-visible{outline:3px solid var(--fg);outline-offset:2px}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem}
+.form-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.75rem;margin-top:.5rem}
+
+/* Footer: the name returns at full width */
+.foot{padding:clamp(4rem,8vw,7rem) var(--m) 2rem}
+.foot .name{font-size:11.6vw;font-weight:650;line-height:.8;letter-spacing:-.055em;white-space:nowrap;margin-left:-.06em}
+.foot .fine{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);margin-top:clamp(2.5rem,5vw,4rem)}
+.foot .fine p{grid-column:span 6;max-width:none}
+.foot .credits{grid-column:7/-1}
+
+/* Motion: photographs open top-down as they arrive, like a cut into the ground */
+@media (prefers-reduced-motion:no-preference){
+  .hero-pic img{animation:settle 1.8s var(--ease) both}
+  @keyframes settle{from{transform:scale(1.07)}to{transform:none}}
+  .motion .reveal{overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path 1.1s var(--ease)}
+  .motion .reveal img{transform:scale(1.06);transition:transform 1.6s var(--ease)}
+  .motion .reveal.in{clip-path:inset(0)}
+  .motion .reveal.in img{transform:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar{transition:none}}
+
+/* Phone and tablet: one column, pictures run edge to edge */
+@media (max-width:860px){
+  .js .menu-toggle{display:inline-flex;min-height:2.5rem;padding:.5rem .9rem;font:inherit;font-weight:600;color:var(--fg);background:var(--surface);border:0;border-radius:0;cursor:pointer}
+  .js .bar nav{display:none;position:absolute;top:100%;left:0;right:0;padding:.5rem var(--m) 1.5rem;background:var(--bg)}
+  .js .bar.open nav{display:block}
+  .js .bar nav ul{flex-direction:column;gap:0}
+  .js .bar nav a{display:block;padding:.6rem 0;font-size:var(--s-lead)}
+  .bar{flex-wrap:wrap}
+}
+@media (max-width:520px){.bar .btn{display:none}}
+@media (max-width:800px){
+  .grid>*,.haul-pics>*{grid-column:1/-1!important;grid-row:auto!important}
+  .hero .actions{justify-self:start}
+  .mining .pic,.haul-pics .p1,.portrait{margin-inline:calc(-1*var(--m))}
+  .mining .pic{order:3;margin-top:3rem}
+  .minerals{order:4}
+  .portrait{position:static}
+  .haul-pics .p1 img{height:auto}
+  .mining .pic figcaption,.haul-pics .p1 figcaption,.portrait figcaption{padding-inline:var(--m)}
+  .minerals li{grid-template-columns:1fr}
+  .minerals strong,.minerals li span{grid-column:1/-1}
+  .minerals li span{margin-top:.3rem}
+  .services{margin-top:3rem}
+  .founder-text{margin-top:2.5rem}
+  .records dl{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot .fine p,.foot .credits{grid-column:1/-1}
+  .foot .credits{margin-top:1.25rem}
+}
+@media (min-width:481px) and (max-width:800px){.portrait{margin-inline:0;max-width:28rem}}
+@media (max-width:480px){.pair,.facts,.records dl{grid-template-columns:1fr}}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar" data-field="limestone">
+  <!-- EDIT: swap this text for your logo when it is ready, e.g. <img src="assets/logo.svg" alt="Global Spectrum" height="32"> -->
+  <a class="mark" href="#top">Global Spectrum</a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <nav id="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="#mining">Mining</a></li>
+      <li><a href="#haulage">Haulage</a></li>
+      <li><a href="#property">Property</a></li>
+      <li><a href="#founder">Founder</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <a class="btn" href="#contact">Get a quote</a>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top" data-field="limestone" aria-labelledby="hero-h">
+  <div class="wrap grid hero-text">
+    <h1 class="display" id="hero-h">From the pit to&nbsp;the&nbsp;plot</h1>
+    <p class="lead">Global Spectrum mines minerals, hauls them by road and rail, and deals in land and property across [your region].</p>
+    <p class="actions">
+      <a class="btn" href="#contact">Get a quote</a>
+      <!-- EDIT: phone number -->
+      <a class="textlink" href="tel:+910000000000">Call [+91 00000 00000]</a>
+    </p>
+  </div>
+  <figure class="hero-pic">
+    <picture>
+      <source media="(max-width: 700px)" type="image/avif" srcset="assets/img/mine-benches-sq-900.avif">
+      <source media="(max-width: 700px)" type="image/webp" srcset="assets/img/mine-benches-sq-900.webp">
+      <source type="image/avif" srcset="assets/img/mine-benches-800.avif 800w, assets/img/mine-benches-1280.avif 1280w, assets/img/mine-benches-1920.avif 1920w" sizes="100vw">
+      <source type="image/webp" srcset="assets/img/mine-benches-800.webp 800w, assets/img/mine-benches-1280.webp 1280w, assets/img/mine-benches-1920.webp 1920w" sizes="100vw">
+      <img src="assets/img/mine-benches-1280.webp" width="1920" height="908" fetchpriority="high" decoding="async"
+        alt="Terraced benches of an open-cast iron ore mine, red earth under a pale sky">
+    </picture>
+    <figcaption>Iron ore benches in Keonjhar district, Odisha</figcaption>
+  </figure>
+</section>
+
+<section class="chapter mining" id="mining" data-field="hematite" aria-labelledby="mining-h">
+  <div class="wrap grid">
+    <h2 class="display" id="mining-h">We mine it</h2>
+    <p class="lead">We extract and grade minerals from leased ground in [your state], and weigh every load before it leaves the pit.</p>
+    <p class="body">Work on site covers overburden removal, drilling and blasting by licensed crews, loading, and crushing and screening to the size the buyer orders. Each lot is sampled and tested, so its grade travels with it on paper.</p>
+    <figure class="pic reveal">
+      <picture>
+        <source type="image/avif" srcset="assets/img/shovel-dumper-800.avif 800w, assets/img/shovel-dumper-1280.avif 1280w" sizes="(min-width: 801px) 45vw, 100vw">
+        <source type="image/webp" srcset="assets/img/shovel-dumper-800.webp 800w, assets/img/shovel-dumper-1280.webp 1280w" sizes="(min-width: 801px) 45vw, 100vw">
+        <img src="assets/img/shovel-dumper-800.webp" width="1280" height="851" loading="lazy" decoding="async"
+          alt="An electric rope shovel tipping its bucket into a yellow dumper truck">
+      </picture>
+      <figcaption>A rope shovel loading a dumper at Amlohri opencast mine, Singrauli</figcaption>
+    </figure>
+    <!-- EDIT: confirm the minerals you actually handle -->
+    <div class="minerals">
+      <h3>What we supply</h3>
+      <ul>
+        <li><strong>Iron ore</strong><span>Lumps and fines, graded by iron content</span></li>
+        <li><strong>Limestone</strong><span>For cement plants and steel works</span></li>
+        <li><strong>Manganese ore</strong><span>For ferro-alloy and steel plants</span></li>
+        <li><strong>Coal</strong><span>Sized for power plants and industry</span></li>
+        <li><strong>Sand and stone aggregate</strong><span>For roads, rail beds and buildings</span></li>
+      </ul>
+      <p class="small sub">Looking for a mineral that isn&rsquo;t listed? <a href="#contact">Ask us</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="chapter haul" id="haulage" data-field="machine" aria-labelledby="haul-h">
+  <div class="wrap grid">
+    <h2 class="display" id="haul-h">Then we move it</h2>
+    <p class="lead">Tippers and trailers carry it from the pit to the crusher, plant, rail siding or port. For long distances, we load rakes.</p>
+    <!-- EDIT: fleet size and siding name -->
+    <dl>
+      <div><dt>By road</dt><dd>[00] tippers and trailers, carrying 16 to 40&nbsp;t a trip, with GPS on every truck.</dd></div>
+      <div><dt>By rail</dt><dd>Rakes loaded at [siding name] for plants and ports across the country.</dd></div>
+      <div><dt>Paperwork</dt><dd>Each trip carries its weighbridge slip, transit pass and e-way bill. You get copies the same day.</dd></div>
+    </dl>
+
+    <!-- Loads per tipper and per rake are set in data-tipper and data-rake. EDIT: email address in action -->
+    <form class="estimator form" id="estimate" action="mailto:hello@yourdomain.in" method="post" enctype="text/plain" data-tipper="25" data-rake="3800">
+      <h3>How many loads is that?</h3>
+      <div class="pair">
+        <label>Tonnes to move
+          <input name="tonnes" type="number" inputmode="numeric" min="1" step="1" value="5000" required>
+        </label>
+        <label>Mineral
+          <select name="mineral">
+            <option>Iron ore</option>
+            <option>Limestone</option>
+            <option>Manganese ore</option>
+            <option>Coal</option>
+            <option>Sand and aggregate</option>
+            <option>Something else</option>
+          </select>
+        </label>
+      </div>
+      <div class="pair">
+        <label>From
+          <input name="from" type="text" placeholder="Mine or stockyard" autocomplete="off">
+        </label>
+        <label>To
+          <input name="to" type="text" placeholder="Plant, siding or port" autocomplete="off">
+        </label>
+      </div>
+      <output class="result num" aria-live="polite">
+        <strong>200 tipper loads</strong>
+        <span>or about 1.3 rakes by rail</span>
+      </output>
+      <p class="small sub">Worked out at 25&nbsp;t a tipper and 3,800&nbsp;t a rake. We confirm the real figures when we call you back.</p>
+      <div class="form-actions"><button class="btn" type="submit">Send for a quote</button></div>
+    </form>
+
+    <div class="haul-pics">
+      <figure class="p1 reveal">
+        <picture>
+          <source type="image/avif" srcset="assets/img/silo-rake-800.avif 800w, assets/img/silo-rake-1280.avif 1280w" sizes="(min-width: 801px) 58vw, 100vw">
+          <source type="image/webp" srcset="assets/img/silo-rake-800.webp 800w, assets/img/silo-rake-1280.webp 1280w" sizes="(min-width: 801px) 58vw, 100vw">
+          <img src="assets/img/silo-rake-800.webp" width="1280" height="849" loading="lazy" decoding="async"
+            alt="A concrete loading silo straddling a railway track, with a conveyor running up to it through green hills">
+        </picture>
+        <figcaption>Silo loading a coal rake at Amlohri, Singrauli</figcaption>
+      </figure>
+      <figure class="p2 reveal">
+        <picture>
+          <source type="image/avif" srcset="assets/img/dumper-fleet-800.avif">
+          <img src="assets/img/dumper-fleet-800.webp" width="800" height="550" loading="lazy" decoding="async"
+            alt="A row of yellow mining dumper trucks parked on concrete">
+        </picture>
+        <figcaption>Dumpers at Gevra opencast mine, Korba</figcaption>
+      </figure>
+      <figure class="p3 reveal">
+        <picture>
+          <source type="image/avif" srcset="assets/img/coal-train-800.avif 800w, assets/img/coal-train-1280.avif 1280w" sizes="(min-width: 801px) 36vw, 100vw">
+          <source type="image/webp" srcset="assets/img/coal-train-800.webp 800w, assets/img/coal-train-1280.webp 1280w" sizes="(min-width: 801px) 36vw, 100vw">
+          <img src="assets/img/coal-train-800.webp" width="1280" height="840" loading="lazy" decoding="async"
+            alt="A blue electric locomotive at the head of a coal rake in a rail yard">
+        </picture>
+        <figcaption>A coal rake in Dhanbad yard, Jharkhand</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="chapter property" id="property" data-field="scrub" aria-labelledby="property-h">
+  <figure class="bleed reveal">
+    <picture>
+      <source type="image/avif" srcset="assets/img/plots-800.avif 800w, assets/img/plots-1280.avif 1280w, assets/img/plots-1600.avif 1600w" sizes="100vw">
+      <source type="image/webp" srcset="assets/img/plots-800.webp 800w, assets/img/plots-1280.webp 1280w, assets/img/plots-1600.webp 1600w" sizes="100vw">
+      <img src="assets/img/plots-1280.webp" width="1600" height="1067" loading="lazy" decoding="async"
+        alt="Walled empty plots in the foreground with apartment blocks behind">
+    </picture>
+  </figure>
+  <div class="wrap grid">
+    <h2 class="display" id="property-h">And we deal in land</h2>
+    <p class="lead">We buy, sell and lease land and buildings, from plots near the mines to plant sites and homes in town.</p>
+    <div class="side">
+      <figure class="reveal">
+        <picture>
+          <source type="image/avif" srcset="assets/img/surveying-800.avif 800w, assets/img/surveying-1280.avif 1280w" sizes="(min-width: 801px) 40vw, 100vw">
+          <source type="image/webp" srcset="assets/img/surveying-800.webp 800w, assets/img/surveying-1280.webp 1280w" sizes="(min-width: 801px) 40vw, 100vw">
+          <img src="assets/img/surveying-800.webp" width="1280" height="720" loading="lazy" decoding="async"
+            alt="Two men measuring a plot of land with a tape">
+        </picture>
+        <figcaption>Surveyors measuring a plot. Above: walled plots on the edge of Hyderabad.</figcaption>
+      </figure>
+    </div>
+    <!-- EDIT: areas you cover -->
+    <div class="services">
+      <ul>
+        <li><strong>Industrial land</strong><span>Sites for plants, crushers, stockyards and sidings, with land-use conversion handled.</span></li>
+        <li><strong>Plots</strong><span>Residential and commercial plots in [areas you cover].</span></li>
+        <li><strong>Buildings</strong><span>Offices, warehouses, sheds and homes to buy or rent.</span></li>
+        <li><strong>Leasing</strong><span>Land and sheds on yearly leases for miners, transporters and traders.</span></li>
+        <li><strong>Title and registry</strong><span>Record search, mutation and registration, start to finish.</span></li>
+      </ul>
+      <p class="lead">We check the title before you pay, and stay with you until the sale deed is registered.</p>
+      <p><a class="textlink" href="#contact">Tell us what you&rsquo;re looking for</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="chapter founder" id="founder" data-field="limestone" aria-labelledby="founder-h">
+  <div class="wrap grid">
+    <!-- EDIT: replace assets/img/founder.jpg with the founder's photo (portrait, 4:5, about 1200 x 1500 px) -->
+    <figure class="portrait reveal">
+      <img src="assets/img/founder.jpg" width="1200" height="1500" loading="lazy" decoding="async"
+        alt="[Founder Name], founder of Global Spectrum">
+    </figure>
+    <div class="founder-text">
+      <!-- EDIT: founder's name, then rewrite the note in their own words -->
+      <h2 class="display" id="founder-h">[Founder Name]</h2>
+      <p class="lead role">Founder, Global Spectrum</p>
+      <div class="note">
+        <p>I started Global Spectrum in [year] with [what you started with: one truck, one lease, one plot]. The business now mines, moves and trades, and I still run all three myself.</p>
+        <p>When you call us, you talk to me, or to someone who will tell me about it the same day.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Started</dt><dd>[YYYY]</dd></div>
+        <div><dt>Based in</dt><dd>[City, State]</dd></div>
+        <div><dt>Works across</dt><dd>[States or districts]</dd></div>
+        <div><dt>Direct line</dt><dd><a href="tel:+910000000000">[+91 00000 00000]</a></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="chapter contact" id="contact" data-field="coal" aria-labelledby="contact-h">
+  <div class="wrap grid">
+    <h2 class="display" id="contact-h">Talk to us</h2>
+    <!-- EDIT: every contact detail below -->
+    <div class="direct">
+      <a class="phone num" href="tel:+910000000000">[+91 00000 00000]</a>
+      <dl class="lines">
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/910000000000">[+91 00000 00000]</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:hello@yourdomain.in">[hello@yourdomain.in]</a></dd></div>
+        <div><dt>Office</dt><dd>[Office address, line 1]<br>[City, State PIN]<br><a href="https://maps.google.com/?q=[your+office+address]">Open in Google Maps</a></dd></div>
+        <div><dt>Hours</dt><dd>Monday to Saturday, 9&nbsp;am to 7&nbsp;pm</dd></div>
+        <div><dt>Elsewhere</dt><dd><a href="https://www.linkedin.com/company/[your-page]">LinkedIn</a>, <a href="https://www.instagram.com/[your-handle]">Instagram</a>, <a href="https://www.facebook.com/[your-page]">Facebook</a></dd></div>
+      </dl>
+    </div>
+
+    <form class="enquiry form" id="enquiry" action="mailto:hello@yourdomain.in" method="post" enctype="text/plain" data-whatsapp="910000000000">
+      <h3>Send an enquiry</h3>
+      <div class="pair">
+        <label>Your name
+          <input name="name" type="text" autocomplete="name" required>
+        </label>
+        <label>Phone
+          <input name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+        </label>
+      </div>
+      <label>It&rsquo;s about
+        <select name="topic">
+          <option>Buying minerals</option>
+          <option>Haulage</option>
+          <option>Land and property</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label>Message
+        <textarea name="message" placeholder="What you need, how much, and where"></textarea>
+      </label>
+      <div class="form-actions">
+        <button class="btn" type="submit">Send enquiry</button>
+        <a class="textlink wa" href="https://wa.me/910000000000">or send it on WhatsApp</a>
+      </div>
+    </form>
+
+    <div class="records">
+      <h3>Registrations</h3>
+      <!-- EDIT: registration numbers; delete any that don't apply -->
+      <dl>
+        <div><dt>GSTIN</dt><dd class="num">[00AAAAA0000A0Z0]</dd></div>
+        <div><dt>CIN</dt><dd class="num">[U00000XX0000PTC000000]</dd></div>
+        <div><dt>Mining lease</dt><dd>[Lease number, district]</dd></div>
+        <div><dt>RERA agent registration</dt><dd>[Registration number]</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot" data-field="coal">
+  <p class="name" aria-hidden="true">Global Spectrum</p>
+  <div class="fine small sub">
+    <p>&copy; 2026 Global Spectrum. All rights reserved.</p>
+    <p class="credits">Photographs from Wikimedia Commons:
+      <a href="https://commons.wikimedia.org/wiki/File:One_of_the_iron_ore_mines_in_Keonjhar_district.jpg">Keonjhar mine</a> by Bikashkumargiri1997, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC&nbsp;BY-SA&nbsp;4.0</a>;
+      <a href="https://commons.wikimedia.org/wiki/File:Shovel_Dumper_combination.jpg">shovel and dumper</a> and <a href="https://commons.wikimedia.org/wiki/File:Silo_rake_loading_at_NCL_Amlohri_Coal_Mine_at_Singrauli.jpg">silo rake loading</a> by Rosehubwiki, Kuber Patel, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC&nbsp;BY-SA&nbsp;4.0</a>;
+      <a href="https://commons.wikimedia.org/wiki/File:GEVRA_DUMPERS.jpg">Gevra dumpers</a> by Meemoprasad, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC&nbsp;BY-SA&nbsp;3.0</a>;
+      <a href="https://commons.wikimedia.org/wiki/File:Coal_train_in_Dhanbad.jpg">coal train in Dhanbad</a> by Smeet Chowdhury, <a href="https://creativecommons.org/licenses/by/2.0/">CC&nbsp;BY&nbsp;2.0</a>;
+      <a href="https://commons.wikimedia.org/wiki/File:Hyderabad_view_Plots.jpg">Hyderabad plots</a> by ramkich4u, CC0;
+      <a href="https://commons.wikimedia.org/wiki/File:Land_surveying.jpg">land surveying</a> by Fotokannan, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC&nbsp;BY-SA&nbsp;4.0</a>.
+    </p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const doc = document.documentElement;
+  const bar = document.querySelector('.bar');
+  const toggle = document.querySelector('.menu-toggle');
+  const fmt = (n, d = 0) => new Intl.NumberFormat('en-IN', { maximumFractionDigits: d }).format(n);
+  const mailto = (form, subject, lines) =>
+    form.getAttribute('action') + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+
+  // Menu on small screens
+  const setMenu = open => { bar.classList.toggle('open', open); toggle.setAttribute('aria-expanded', open); toggle.textContent = open ? 'Close' : 'Menu'; };
+  toggle.addEventListener('click', () => setMenu(!bar.classList.contains('open')));
+  bar.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+  if ('IntersectionObserver' in window) {
+    // Header takes the colour of the chapter beneath it
+    const chapters = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) bar.dataset.field = e.target.dataset.field;
+    }), { rootMargin: '0px 0px -94% 0px' });
+    document.querySelectorAll('main [data-field], .foot').forEach(s => chapters.observe(s));
+
+    // Photographs open as they come into view
+    const reveal = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); reveal.unobserve(e.target); }
+    }), { rootMargin: '0px 0px -10% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => reveal.observe(el));
+    doc.classList.add('motion');
+  }
+
+  // Haulage estimate
+  const est = document.getElementById('estimate');
+  const tipper = +est.dataset.tipper, rake = +est.dataset.rake;
+  const out = est.querySelector('output');
+  const calc = () => {
+    const t = Math.max(0, Math.round(+est.elements.tonnes.value) || 0);
+    const loads = Math.ceil(t / tipper), rakes = t / rake;
+    const rakeText = t === 0 ? '' : rakes < 0.95 ? 'or part of one rake by rail' : 'or about ' + fmt(rakes, 1) + (fmt(rakes, 1) === '1' ? ' rake' : ' rakes') + ' by rail';
+    out.querySelector('strong').textContent = fmt(loads) + (loads === 1 ? ' tipper load' : ' tipper loads');
+    out.querySelector('span').textContent = rakeText;
+    return t;
+  };
+  est.addEventListener('input', calc);
+  calc();
+  est.addEventListener('submit', e => {
+    e.preventDefault();
+    const f = est.elements, t = calc();
+    location.href = mailto(est, `Haulage quote: ${fmt(t)} t of ${f.mineral.value.toLowerCase()}`, [
+      `Tonnes: ${fmt(t)}`, `Mineral: ${f.mineral.value}`, `From: ${f.from.value || '-'}`, `To: ${f.to.value || '-'}`,
+      '', `Estimate on the website: ${out.querySelector('strong').textContent}, ${out.querySelector('span').textContent}.`
+    ]);
+  });
+
+  // Enquiry: email or WhatsApp with the same text
+  const enq = document.getElementById('enquiry');
+  const wa = enq.querySelector('.wa');
+  const lines = () => { const f = enq.elements; return [`Name: ${f.name.value}`, `Phone: ${f.phone.value}`, `About: ${f.topic.value}`, '', f.message.value]; };
+  const updateWa = () => { wa.href = `https://wa.me/${enq.dataset.whatsapp}?text=${encodeURIComponent(lines().join('\n'))}`; };
+  enq.addEventListener('input', updateWa);
+  enq.addEventListener('submit', e => {
+    e.preventDefault();
+    location.href = mailto(enq, `Enquiry: ${enq.elements.topic.value}`, lines());
+  });
+})();
+</script>
+</body>
+</html>

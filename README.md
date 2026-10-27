@@ -2,36 +2,18 @@
 
 One static page (`index.html`) with inline CSS and a few lines of JavaScript. No framework, no build step, no third-party requests. Hosted on GitHub Pages: every push to `main` republishes it.
 
-## Fill these in before sharing the link
+## Still to add
 
-Open `index.html` and search for each item. Every spot is also marked with an `<!-- EDIT -->` comment.
+Everything else on the page is filled in with real details.
 
-| Search for | Replace with | Where it appears |
-|---|---|---|
-| `[+91 00000 00000]` and `+910000000000` | Main phone number (keep the `tel:` link format: `+91` followed by 10 digits) | Hero, founder facts, contact |
-| `910000000000` | WhatsApp number (country code + number, no `+`) | WhatsApp link, `data-whatsapp` on the enquiry form |
-| `hello@yourdomain.in` | Your email address | Email link and both forms (`action="mailto:..."`) |
-| `[Founder Name]` | Founder's full name | Founder heading, photo alt text |
-| `[year]`, `[YYYY]`, `[what you started with...]` | The founder's own story. Rewrite the two-paragraph note in their words | Founder section |
-| `[City, State]`, `[States or districts]` | Where you're based and where you work | Founder facts |
-| `[your region]`, `[your state]` | Region and state you operate in | Hero, page description, mining |
-| `[00]`, `[siding name]` | Fleet size and rail siding | Haulage |
-| `[areas you cover]` | Localities for plots | Property |
-| `[Office address, line 1]`, `[City, State PIN]`, `[your+office+address]` | Office address, plus the same address in the Google Maps link | Contact |
-| `[your-page]`, `[your-handle]` | LinkedIn, Instagram and Facebook URLs. Delete any you don't use | Contact |
-| `[00AAAAA0000A0Z0]`, `[U00000XX0000PTC000000]`, `[Lease number, district]`, `[Registration number]` | GSTIN, CIN, mining lease, RERA agent registration. Delete any row that doesn't apply | Contact, "Registrations" |
-
-Also confirm the sample content. It was written to show the design at full size and needs your check:
-
-- **Minerals list:** iron ore, limestone, manganese ore, coal, sand and stone aggregate.
-- **Mining description:** overburden removal, drilling and blasting, crushing, sampling.
-- **Haulage details:** 16–40 t per trip, GPS on every truck, weighbridge slip, transit pass and e-way bill with every trip.
-- **Property services:** industrial land, plots, buildings, leasing, title and registry.
-- **Office hours:** Monday to Saturday, 9 am to 7 pm.
+- **GSTIN and Udyam numbers:** in `index.html`, find the commented-out `Registrations` block near the end of the contact section, put in the real numbers, and remove the `<!--` and `-->` around it.
+- **Logo:** see below.
+- **Domain:** when you buy one, add a file named `CNAME` containing just the domain (for example `globalspectrum.in`). At your domain registrar, point the domain at GitHub Pages ([GitHub's guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)). Then update the `canonical`, `og:url` and `url` addresses in the `<head>` of `index.html`.
+- **Haulage estimate:** it assumes about 25 t per truck. Change `data-truck` on the `<form id="estimate">` tag, and the note under the result, if your trucks carry more or less.
 
 ## Founder photo
 
-Replace `assets/img/founder.jpg` with the real photo and keep the same file name. Use a portrait crop (4:5), about 1200 × 1500 px. Export it as JPEG at roughly 75–80% quality so it stays under ~200 KB and the site stays fast.
+The founder photo is cropped to 4:5 and saved three ways: `assets/img/founder.avif`, `founder.webp` and `founder.jpg`. To change it, replace all three with the new photo at the same size (720 × 900 px).
 
 ## Logo
 
@@ -75,9 +57,8 @@ The mining, haulage and property photos are real photographs from Wikimedia Comm
 |---|---|---|
 | [Iron ore mine, Keonjhar](https://commons.wikimedia.org/wiki/File:One_of_the_iron_ore_mines_in_Keonjhar_district.jpg) | Bikashkumargiri1997 | CC BY-SA 4.0 |
 | [Shovel and dumper, Amlohri](https://commons.wikimedia.org/wiki/File:Shovel_Dumper_combination.jpg) | Rosehubwiki, Kuber Patel | CC BY-SA 4.0 |
-| [Silo rake loading, Amlohri](https://commons.wikimedia.org/wiki/File:Silo_rake_loading_at_NCL_Amlohri_Coal_Mine_at_Singrauli.jpg) | Rosehubwiki, Kuber Patel | CC BY-SA 4.0 |
 | [Dumpers at Gevra](https://commons.wikimedia.org/wiki/File:GEVRA_DUMPERS.jpg) | Meemoprasad | CC BY-SA 3.0 |
-| [Coal train in Dhanbad](https://commons.wikimedia.org/wiki/File:Coal_train_in_Dhanbad.jpg) | Smeet Chowdhury | CC BY 2.0 |
+| [Loaded truck on an Indian highway](https://commons.wikimedia.org/wiki/File:Indian_truck-Full_loaded.JPG) | Diego Delso | CC BY-SA 4.0 |
 | [Plots in Hyderabad](https://commons.wikimedia.org/wiki/File:Hyderabad_view_Plots.jpg) | ramkich4u | CC0 |
 | [Land surveying](https://commons.wikimedia.org/wiki/File:Land_surveying.jpg) | Fotokannan | CC BY-SA 4.0 |
 
@@ -91,7 +72,7 @@ To receive submissions without the visitor's email app, sign up for a form servi
 
 ## Haulage estimate
 
-The estimate uses 25 t per tipper and 3,800 t per rake. Change `data-tipper` and `data-rake` on the `<form id="estimate">` tag, and the sentence under the result, to match your fleet.
+The estimate uses about 25 t per truck. Change `data-truck` on the `<form id="estimate">` tag, and the sentence under the result, to match your fleet.
 
 ## Publishing changes
 

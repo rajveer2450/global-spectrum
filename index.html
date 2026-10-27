@@ -4,12 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Global Spectrum | Mining, mineral haulage and property</title>
-<meta name="description" content="Global Spectrum mines minerals, hauls them by road and rail, and buys, sells and leases land and property across [your region].">
+<meta name="description" content="Global Spectrum, Maihar: contract mining, coal, limestone and sand supply, road haulage, and land and property across Satna, Rewa, Sidhi, Singrauli, Katni and Jabalpur.">
 <meta name="theme-color" content="#e4e2dd">
+<link rel="canonical" href="https://rajveer2450.github.io/global-spectrum/">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://rajveer2450.github.io/global-spectrum/">
 <meta property="og:title" content="Global Spectrum | Mining, mineral haulage and property">
-<meta property="og:description" content="Minerals mined and moved by road and rail. Land and property bought, sold and leased.">
-<meta property="og:image" content="assets/img/mine-benches-1280.webp">
+<meta property="og:description" content="Coal, limestone and sand mined, supplied and hauled by road. Land and property bought, sold and leased. Maihar, Madhya Pradesh.">
+<meta property="og:image" content="https://rajveer2450.github.io/global-spectrum/assets/img/mine-benches-1280.webp">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Global Spectrum",
+ "description":"Contract mining, coal, limestone and sand supply, road haulage, and land and property dealing.",
+ "url":"https://rajveer2450.github.io/global-spectrum/","telephone":"+91-9584060522","email":"ceoglobalspectrum@gmail.com",
+ "foundingDate":"2021","founder":{"@type":"Person","name":"Jitendra Patel"},
+ "image":"https://rajveer2450.github.io/global-spectrum/assets/img/founder.jpg",
+ "address":{"@type":"PostalAddress","streetAddress":"1/43, Rewa Road, Amarpatan","addressLocality":"Maihar","addressRegion":"Madhya Pradesh","postalCode":"485775","addressCountry":"IN"},
+ "areaServed":["Maihar","Satna","Rewa","Sidhi","Singrauli","Katni","Jabalpur"],
+ "openingHours":"Mo-Sa 10:00-18:00"}
+</script>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/libre-franklin-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" type="image/avif" fetchpriority="high" media="(max-width: 700px)" href="assets/img/mine-benches-sq-900.avif">
@@ -19,7 +31,7 @@
 <style>
 @font-face{font-family:"Libre Franklin";font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/libre-franklin-latin.woff2) format("woff2")}
 
-/* Colours are taken from the ground itself: limestone, hematite (iron ore),
+/* Colours are taken from the ground itself: limestone, red earth,
    machinery yellow, scrub around the pits, and coal. One field per chapter. */
 :root{
   --limestone:#e4e2dd;--limestone-2:#d6d3cb;
@@ -124,10 +136,8 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
 .result{margin-block:1.5rem .5rem}
 .result strong{display:block;font-size:var(--s-mid);font-weight:600;line-height:1.05;letter-spacing:-.025em}
 .haul-pics{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--g);margin-top:clamp(4rem,9vw,8rem)}
-.haul-pics .p1{grid-column:1/8;grid-row:1/3;display:grid;grid-template-rows:minmax(0,1fr) auto}
-.haul-pics .p1 picture{display:block;min-height:0}
-.haul-pics .p1 img{height:100%;object-fit:cover}
-.haul-pics .p2,.haul-pics .p3{grid-column:8/-1}
+.haul-pics .p1{grid-column:1/8}
+.haul-pics .p2{grid-column:8/-1;align-self:end}
 
 /* Property */
 .property{padding-top:0}
@@ -214,7 +224,6 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
   .mining .pic{order:3;margin-top:3rem}
   .minerals{order:4}
   .portrait{position:static}
-  .haul-pics .p1 img{height:auto}
   .mining .pic figcaption,.haul-pics .p1 figcaption,.portrait figcaption{padding-inline:var(--m)}
   .minerals li{grid-template-columns:1fr}
   .minerals strong,.minerals li span{grid-column:1/-1}
@@ -254,11 +263,10 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
 <section class="hero" id="top" data-field="limestone" aria-labelledby="hero-h">
   <div class="wrap grid hero-text">
     <h1 class="display" id="hero-h">From the pit to&nbsp;the&nbsp;plot</h1>
-    <p class="lead">Global Spectrum mines minerals, hauls them by road and rail, and deals in land and property across [your region].</p>
+    <p class="lead">Global Spectrum mines and supplies coal, limestone and sand, hauls them by road, and deals in land and property. Based in Maihar, Madhya Pradesh.</p>
     <p class="actions">
       <a class="btn" href="#contact">Get a quote</a>
-      <!-- EDIT: phone number -->
-      <a class="textlink" href="tel:+910000000000">Call [+91 00000 00000]</a>
+      <a class="textlink" href="tel:+919584060522">Call +91&nbsp;95840&nbsp;60522</a>
     </p>
   </div>
   <figure class="hero-pic">
@@ -268,37 +276,35 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
       <source type="image/avif" srcset="assets/img/mine-benches-800.avif 800w, assets/img/mine-benches-1280.avif 1280w, assets/img/mine-benches-1920.avif 1920w" sizes="100vw">
       <source type="image/webp" srcset="assets/img/mine-benches-800.webp 800w, assets/img/mine-benches-1280.webp 1280w, assets/img/mine-benches-1920.webp 1920w" sizes="100vw">
       <img src="assets/img/mine-benches-1280.webp" width="1920" height="908" fetchpriority="high" decoding="async"
-        alt="Terraced benches of an open-cast iron ore mine, red earth under a pale sky">
+        alt="Terraced benches of an open-cast mine, red earth under a pale sky">
     </picture>
-    <figcaption>Iron ore benches in Keonjhar district, Odisha</figcaption>
+    <figcaption>Open-cast mine benches in Keonjhar district, Odisha</figcaption>
   </figure>
 </section>
 
 <section class="chapter mining" id="mining" data-field="hematite" aria-labelledby="mining-h">
   <div class="wrap grid">
     <h2 class="display" id="mining-h">We mine it</h2>
-    <p class="lead">We extract and grade minerals from leased ground in [your state], and weigh every load before it leaves the pit.</p>
-    <p class="body">Work on site covers overburden removal, drilling and blasting by licensed crews, loading, and crushing and screening to the size the buyer orders. Each lot is sampled and tested, so its grade travels with it on paper.</p>
+    <p class="lead">We take on contract mining for lease-holders, and supply coal, limestone and sand to cement plants, power plants and builders.</p>
+    <p class="body">We work across Maihar, Satna, Rewa, Sidhi, Singrauli, Katni and Jabalpur, close to the cement plants of the Maihar and Satna belt and the Singrauli coalfield.</p>
     <figure class="pic reveal">
       <picture>
         <source type="image/avif" srcset="assets/img/shovel-dumper-800.avif 800w, assets/img/shovel-dumper-1280.avif 1280w" sizes="(min-width: 801px) 45vw, 100vw">
         <source type="image/webp" srcset="assets/img/shovel-dumper-800.webp 800w, assets/img/shovel-dumper-1280.webp 1280w" sizes="(min-width: 801px) 45vw, 100vw">
         <img src="assets/img/shovel-dumper-800.webp" width="1280" height="851" loading="lazy" decoding="async"
-          alt="An electric rope shovel tipping its bucket into a yellow dumper truck">
+          alt="An electric rope shovel tipping its bucket of coal into a yellow dumper truck">
       </picture>
-      <figcaption>A rope shovel loading a dumper at Amlohri opencast mine, Singrauli</figcaption>
+      <figcaption>A rope shovel loading coal into a dumper at Amlohri opencast mine, Singrauli</figcaption>
     </figure>
-    <!-- EDIT: confirm the minerals you actually handle -->
     <div class="minerals">
       <h3>What we supply</h3>
       <ul>
-        <li><strong>Iron ore</strong><span>Lumps and fines, graded by iron content</span></li>
-        <li><strong>Limestone</strong><span>For cement plants and steel works</span></li>
-        <li><strong>Manganese ore</strong><span>For ferro-alloy and steel plants</span></li>
-        <li><strong>Coal</strong><span>Sized for power plants and industry</span></li>
-        <li><strong>Sand and stone aggregate</strong><span>For roads, rail beds and buildings</span></li>
+        <li><strong>Coal</strong><span>For power plants and industry</span></li>
+        <li><strong>Limestone</strong><span>For cement plants</span></li>
+        <li><strong>River sand</strong><span>For builders and contractors</span></li>
+        <li><strong>M-sand</strong><span>Manufactured sand for concrete and plaster</span></li>
       </ul>
-      <p class="small sub">Looking for a mineral that isn&rsquo;t listed? <a href="#contact">Ask us</a>.</p>
+      <p class="small sub">Looking for something that isn&rsquo;t listed? <a href="#contact">Ask us</a>.</p>
     </div>
   </div>
 </section>
@@ -306,28 +312,26 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
 <section class="chapter haul" id="haulage" data-field="machine" aria-labelledby="haul-h">
   <div class="wrap grid">
     <h2 class="display" id="haul-h">Then we move it</h2>
-    <p class="lead">Tippers and trailers carry it from the pit to the crusher, plant, rail siding or port. For long distances, we load rakes.</p>
-    <!-- EDIT: fleet size and siding name -->
+    <p class="lead">Our own trucks, plus attached trucks when an order needs more, carry it from the mine or stockyard to your plant or site.</p>
     <dl>
-      <div><dt>By road</dt><dd>[00] tippers and trailers, carrying 16 to 40&nbsp;t a trip, with GPS on every truck.</dd></div>
-      <div><dt>By rail</dt><dd>Rakes loaded at [siding name] for plants and ports across the country.</dd></div>
-      <div><dt>Paperwork</dt><dd>Each trip carries its weighbridge slip, transit pass and e-way bill. You get copies the same day.</dd></div>
+      <div><dt>Own and attached trucks</dt><dd>We run our own fleet and bring in attached trucks for large orders, so one call covers the whole job.</dd></div>
+      <div><dt>Where we deliver</dt><dd>Maihar, Satna, Rewa, Sidhi, Singrauli, Katni and Jabalpur, and further on request.</dd></div>
+      <div><dt>Paperwork</dt><dd>Each load travels with its weighbridge slip and the transport papers the law requires.</dd></div>
     </dl>
 
-    <!-- Loads per tipper and per rake are set in data-tipper and data-rake. EDIT: email address in action -->
-    <form class="estimator form" id="estimate" action="mailto:hello@yourdomain.in" method="post" enctype="text/plain" data-tipper="25" data-rake="3800">
+    <!-- Tonnes per truck is set in data-truck. Change it, and the note below the result, to match your fleet. -->
+    <form class="estimator form" id="estimate" action="mailto:ceoglobalspectrum@gmail.com" method="post" enctype="text/plain" data-truck="25">
       <h3>How many loads is that?</h3>
       <div class="pair">
         <label>Tonnes to move
           <input name="tonnes" type="number" inputmode="numeric" min="1" step="1" value="5000" required>
         </label>
-        <label>Mineral
+        <label>Material
           <select name="mineral">
-            <option>Iron ore</option>
-            <option>Limestone</option>
-            <option>Manganese ore</option>
             <option>Coal</option>
-            <option>Sand and aggregate</option>
+            <option>Limestone</option>
+            <option>River sand</option>
+            <option>M-sand</option>
             <option>Something else</option>
           </select>
         </label>
@@ -337,26 +341,26 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
           <input name="from" type="text" placeholder="Mine or stockyard" autocomplete="off">
         </label>
         <label>To
-          <input name="to" type="text" placeholder="Plant, siding or port" autocomplete="off">
+          <input name="to" type="text" placeholder="Plant or site" autocomplete="off">
         </label>
       </div>
       <output class="result num" aria-live="polite">
-        <strong>200 tipper loads</strong>
-        <span>or about 1.3 rakes by rail</span>
+        <strong>200 truckloads</strong>
+        <span>by road</span>
       </output>
-      <p class="small sub">Worked out at 25&nbsp;t a tipper and 3,800&nbsp;t a rake. We confirm the real figures when we call you back.</p>
+      <p class="small sub">Worked out at about 25&nbsp;t a truck. We confirm the real figures when we call you back.</p>
       <div class="form-actions"><button class="btn" type="submit">Send for a quote</button></div>
     </form>
 
     <div class="haul-pics">
       <figure class="p1 reveal">
         <picture>
-          <source type="image/avif" srcset="assets/img/silo-rake-800.avif 800w, assets/img/silo-rake-1280.avif 1280w" sizes="(min-width: 801px) 58vw, 100vw">
-          <source type="image/webp" srcset="assets/img/silo-rake-800.webp 800w, assets/img/silo-rake-1280.webp 1280w" sizes="(min-width: 801px) 58vw, 100vw">
-          <img src="assets/img/silo-rake-800.webp" width="1280" height="849" loading="lazy" decoding="async"
-            alt="A concrete loading silo straddling a railway track, with a conveyor running up to it through green hills">
+          <source type="image/avif" srcset="assets/img/road-truck-800.avif 800w, assets/img/road-truck-1280.avif 1280w" sizes="(min-width: 801px) 58vw, 100vw">
+          <source type="image/webp" srcset="assets/img/road-truck-800.webp 800w, assets/img/road-truck-1280.webp 1280w" sizes="(min-width: 801px) 58vw, 100vw">
+          <img src="assets/img/road-truck-800.webp" width="1280" height="888" loading="lazy" decoding="async"
+            alt="A fully loaded Indian goods truck with a painted cab on a highway">
         </picture>
-        <figcaption>Silo loading a coal rake at Amlohri, Singrauli</figcaption>
+        <figcaption>A loaded truck on an Indian highway</figcaption>
       </figure>
       <figure class="p2 reveal">
         <picture>
@@ -365,15 +369,6 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
             alt="A row of yellow mining dumper trucks parked on concrete">
         </picture>
         <figcaption>Dumpers at Gevra opencast mine, Korba</figcaption>
-      </figure>
-      <figure class="p3 reveal">
-        <picture>
-          <source type="image/avif" srcset="assets/img/coal-train-800.avif 800w, assets/img/coal-train-1280.avif 1280w" sizes="(min-width: 801px) 36vw, 100vw">
-          <source type="image/webp" srcset="assets/img/coal-train-800.webp 800w, assets/img/coal-train-1280.webp 1280w" sizes="(min-width: 801px) 36vw, 100vw">
-          <img src="assets/img/coal-train-800.webp" width="1280" height="840" loading="lazy" decoding="async"
-            alt="A blue electric locomotive at the head of a coal rake in a rail yard">
-        </picture>
-        <figcaption>A coal rake in Dhanbad yard, Jharkhand</figcaption>
       </figure>
     </div>
   </div>
@@ -390,7 +385,7 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
   </figure>
   <div class="wrap grid">
     <h2 class="display" id="property-h">And we deal in land</h2>
-    <p class="lead">We buy, sell and lease land and buildings, from plots near the mines to plant sites and homes in town.</p>
+    <p class="lead">We buy, sell and lease land and buildings, from plant and stockyard sites to plots and homes in town.</p>
     <div class="side">
       <figure class="reveal">
         <picture>
@@ -402,11 +397,10 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
         <figcaption>Surveyors measuring a plot. Above: walled plots on the edge of Hyderabad.</figcaption>
       </figure>
     </div>
-    <!-- EDIT: areas you cover -->
     <div class="services">
       <ul>
         <li><strong>Industrial land</strong><span>Sites for plants, crushers, stockyards and sidings, with land-use conversion handled.</span></li>
-        <li><strong>Plots</strong><span>Residential and commercial plots in [areas you cover].</span></li>
+        <li><strong>Plots</strong><span>Residential and commercial plots across the districts we work in.</span></li>
         <li><strong>Buildings</strong><span>Offices, warehouses, sheds and homes to buy or rent.</span></li>
         <li><strong>Leasing</strong><span>Land and sheds on yearly leases for miners, transporters and traders.</span></li>
         <li><strong>Title and registry</strong><span>Record search, mutation and registration, start to finish.</span></li>
@@ -419,24 +413,26 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
 
 <section class="chapter founder" id="founder" data-field="limestone" aria-labelledby="founder-h">
   <div class="wrap grid">
-    <!-- EDIT: replace assets/img/founder.jpg with the founder's photo (portrait, 4:5, about 1200 x 1500 px) -->
     <figure class="portrait reveal">
-      <img src="assets/img/founder.jpg" width="1200" height="1500" loading="lazy" decoding="async"
-        alt="[Founder Name], founder of Global Spectrum">
+      <picture>
+        <source type="image/avif" srcset="assets/img/founder.avif">
+        <source type="image/webp" srcset="assets/img/founder.webp">
+        <img src="assets/img/founder.jpg" width="720" height="900" loading="lazy" decoding="async"
+          alt="Jitendra Patel, founder of Global Spectrum, in a white shirt">
+      </picture>
     </figure>
     <div class="founder-text">
-      <!-- EDIT: founder's name, then rewrite the note in their own words -->
-      <h2 class="display" id="founder-h">[Founder Name]</h2>
+      <h2 class="display" id="founder-h">Jitendra Patel</h2>
       <p class="lead role">Founder, Global Spectrum</p>
       <div class="note">
-        <p>I started Global Spectrum in [year] with [what you started with: one truck, one lease, one plot]. The business now mines, moves and trades, and I still run all three myself.</p>
-        <p>When you call us, you talk to me, or to someone who will tell me about it the same day.</p>
+        <p>Jitendra Patel started Global Spectrum in Maihar in 2021. He leads every part of it: contract mining, mineral supply, haulage and property.</p>
+        <p>Call him directly on <a href="tel:+919584060522">+91&nbsp;95840&nbsp;60522</a>.</p>
       </div>
       <dl class="facts">
-        <div><dt>Started</dt><dd>[YYYY]</dd></div>
-        <div><dt>Based in</dt><dd>[City, State]</dd></div>
-        <div><dt>Works across</dt><dd>[States or districts]</dd></div>
-        <div><dt>Direct line</dt><dd><a href="tel:+910000000000">[+91 00000 00000]</a></dd></div>
+        <div><dt>Started</dt><dd>2021</dd></div>
+        <div><dt>Based in</dt><dd>Maihar, Madhya Pradesh</dd></div>
+        <div><dt>Works across</dt><dd>Satna, Rewa, Sidhi, Singrauli, Katni, Jabalpur</dd></div>
+        <div><dt>Direct line</dt><dd><a href="tel:+919584060522">+91&nbsp;95840&nbsp;60522</a></dd></div>
       </dl>
     </div>
   </div>
@@ -445,19 +441,17 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
 <section class="chapter contact" id="contact" data-field="coal" aria-labelledby="contact-h">
   <div class="wrap grid">
     <h2 class="display" id="contact-h">Talk to us</h2>
-    <!-- EDIT: every contact detail below -->
     <div class="direct">
-      <a class="phone num" href="tel:+910000000000">[+91 00000 00000]</a>
+      <a class="phone num" href="tel:+919584060522">+91&nbsp;95840&nbsp;60522</a>
       <dl class="lines">
-        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/910000000000">[+91 00000 00000]</a></dd></div>
-        <div><dt>Email</dt><dd><a href="mailto:hello@yourdomain.in">[hello@yourdomain.in]</a></dd></div>
-        <div><dt>Office</dt><dd>[Office address, line 1]<br>[City, State PIN]<br><a href="https://maps.google.com/?q=[your+office+address]">Open in Google Maps</a></dd></div>
-        <div><dt>Hours</dt><dd>Monday to Saturday, 9&nbsp;am to 7&nbsp;pm</dd></div>
-        <div><dt>Elsewhere</dt><dd><a href="https://www.linkedin.com/company/[your-page]">LinkedIn</a>, <a href="https://www.instagram.com/[your-handle]">Instagram</a>, <a href="https://www.facebook.com/[your-page]">Facebook</a></dd></div>
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/919584060522">+91&nbsp;95840&nbsp;60522</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:ceoglobalspectrum@gmail.com">ceoglobalspectrum@gmail.com</a></dd></div>
+        <div><dt>Office</dt><dd>1/43, Rewa Road, Amarpatan<br>Maihar, Madhya Pradesh 485775<br><a href="https://maps.google.com/?q=1%2F43+Rewa+Road+Amarpatan+Maihar+Madhya+Pradesh+485775">Open in Google Maps</a></dd></div>
+        <div><dt>Hours</dt><dd>Monday to Saturday, 10&nbsp;am to 6&nbsp;pm</dd></div>
       </dl>
     </div>
 
-    <form class="enquiry form" id="enquiry" action="mailto:hello@yourdomain.in" method="post" enctype="text/plain" data-whatsapp="910000000000">
+    <form class="enquiry form" id="enquiry" action="mailto:ceoglobalspectrum@gmail.com" method="post" enctype="text/plain" data-whatsapp="919584060522">
       <h3>Send an enquiry</h3>
       <div class="pair">
         <label>Your name
@@ -469,7 +463,8 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
       </div>
       <label>It&rsquo;s about
         <select name="topic">
-          <option>Buying minerals</option>
+          <option>Buying coal, limestone or sand</option>
+          <option>Contract mining</option>
           <option>Haulage</option>
           <option>Land and property</option>
           <option>Something else</option>
@@ -480,20 +475,19 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
       </label>
       <div class="form-actions">
         <button class="btn" type="submit">Send enquiry</button>
-        <a class="textlink wa" href="https://wa.me/910000000000">or send it on WhatsApp</a>
+        <a class="textlink wa" href="https://wa.me/919584060522">or send it on WhatsApp</a>
       </div>
     </form>
 
+    <!-- Registrations: add back when the numbers are ready.
     <div class="records">
       <h3>Registrations</h3>
-      <!-- EDIT: registration numbers; delete any that don't apply -->
       <dl>
-        <div><dt>GSTIN</dt><dd class="num">[00AAAAA0000A0Z0]</dd></div>
-        <div><dt>CIN</dt><dd class="num">[U00000XX0000PTC000000]</dd></div>
-        <div><dt>Mining lease</dt><dd>[Lease number, district]</dd></div>
-        <div><dt>RERA agent registration</dt><dd>[Registration number]</dd></div>
+        <div><dt>GSTIN</dt><dd class="num">23XXXXXXXXXXXXX</dd></div>
+        <div><dt>Udyam</dt><dd class="num">UDYAM-MP-00-0000000</dd></div>
       </dl>
     </div>
+    -->
   </div>
 </section>
 
@@ -502,12 +496,12 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
 <footer class="foot" data-field="coal">
   <p class="name" aria-hidden="true">Global Spectrum</p>
   <div class="fine small sub">
-    <p>&copy; 2026 Global Spectrum. All rights reserved.</p>
+    <p>&copy; 2026 Global Spectrum, Maihar, Madhya Pradesh.</p>
     <p class="credits">Photographs from Wikimedia Commons:
       <a href="https://commons.wikimedia.org/wiki/File:One_of_the_iron_ore_mines_in_Keonjhar_district.jpg">Keonjhar mine</a> by Bikashkumargiri1997, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC&nbsp;BY-SA&nbsp;4.0</a>;
-      <a href="https://commons.wikimedia.org/wiki/File:Shovel_Dumper_combination.jpg">shovel and dumper</a> and <a href="https://commons.wikimedia.org/wiki/File:Silo_rake_loading_at_NCL_Amlohri_Coal_Mine_at_Singrauli.jpg">silo rake loading</a> by Rosehubwiki, Kuber Patel, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC&nbsp;BY-SA&nbsp;4.0</a>;
+      <a href="https://commons.wikimedia.org/wiki/File:Shovel_Dumper_combination.jpg">shovel and dumper</a> by Rosehubwiki, Kuber Patel, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC&nbsp;BY-SA&nbsp;4.0</a>;
+      <a href="https://commons.wikimedia.org/wiki/File:Indian_truck-Full_loaded.JPG">loaded truck</a> by Diego Delso, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC&nbsp;BY-SA&nbsp;4.0</a>;
       <a href="https://commons.wikimedia.org/wiki/File:GEVRA_DUMPERS.jpg">Gevra dumpers</a> by Meemoprasad, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC&nbsp;BY-SA&nbsp;3.0</a>;
-      <a href="https://commons.wikimedia.org/wiki/File:Coal_train_in_Dhanbad.jpg">coal train in Dhanbad</a> by Smeet Chowdhury, <a href="https://creativecommons.org/licenses/by/2.0/">CC&nbsp;BY&nbsp;2.0</a>;
       <a href="https://commons.wikimedia.org/wiki/File:Hyderabad_view_Plots.jpg">Hyderabad plots</a> by ramkich4u, CC0;
       <a href="https://commons.wikimedia.org/wiki/File:Land_surveying.jpg">land surveying</a> by Fotokannan, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC&nbsp;BY-SA&nbsp;4.0</a>.
     </p>
@@ -546,14 +540,12 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
 
   // Haulage estimate
   const est = document.getElementById('estimate');
-  const tipper = +est.dataset.tipper, rake = +est.dataset.rake;
-  const out = est.querySelector('output');
+  const perTruck = +est.dataset.truck;
+  const out = est.querySelector('output strong');
   const calc = () => {
     const t = Math.max(0, Math.round(+est.elements.tonnes.value) || 0);
-    const loads = Math.ceil(t / tipper), rakes = t / rake;
-    const rakeText = t === 0 ? '' : rakes < 0.95 ? 'or part of one rake by rail' : 'or about ' + fmt(rakes, 1) + (fmt(rakes, 1) === '1' ? ' rake' : ' rakes') + ' by rail';
-    out.querySelector('strong').textContent = fmt(loads) + (loads === 1 ? ' tipper load' : ' tipper loads');
-    out.querySelector('span').textContent = rakeText;
+    const loads = Math.ceil(t / perTruck);
+    out.textContent = fmt(loads) + (loads === 1 ? ' truckload' : ' truckloads');
     return t;
   };
   est.addEventListener('input', calc);
@@ -562,8 +554,8 @@ figcaption{margin-top:.7rem;font-size:var(--s-small);line-height:1.45;color:var(
     e.preventDefault();
     const f = est.elements, t = calc();
     location.href = mailto(est, `Haulage quote: ${fmt(t)} t of ${f.mineral.value.toLowerCase()}`, [
-      `Tonnes: ${fmt(t)}`, `Mineral: ${f.mineral.value}`, `From: ${f.from.value || '-'}`, `To: ${f.to.value || '-'}`,
-      '', `Estimate on the website: ${out.querySelector('strong').textContent}, ${out.querySelector('span').textContent}.`
+      `Tonnes: ${fmt(t)}`, `Material: ${f.mineral.value}`, `From: ${f.from.value || '-'}`, `To: ${f.to.value || '-'}`,
+      '', `Estimate on the website: ${out.textContent} by road.`
     ]);
   });
 
